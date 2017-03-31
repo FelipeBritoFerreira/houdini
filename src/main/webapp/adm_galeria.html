@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/houdini.css">
+
+
+    <script src="resources/jquery-1.11.3.min.js" type="application/javascript"></script>
+    <script src="js/houdini.js" type="application/javascript"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js" type="application/javascript"></script>
+
+
+</head>
+<body>
+
+
+<div class="col-sm-8 col-sm-offset-2" style="margin-top: 5%; margin-bottom: 5%">
+
+
+    <form>
+        <fieldset class="form-group">
+            <legend>Nova galeria</legend>
+
+
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nome da galeria</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome da galeria">
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Titulo para o thumbnail</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Thumbnail">
+            </div>
+            <img src="img/exemplo_titulo_thumbnail.png" class="img-exemplo"/>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput3">Título para a seção da galeria</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Título">
+            </div>
+            <img src="img/exemplo_titulo_galeria.png" class="img-exemplo"/>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput4">Texto: Desafio</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Desafio">
+            </div>
+            <img src="img/exemplo_texto_desafio.png" class="img-exemplo"/>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput5">Texto: Galeria</label>
+                <textarea rows="10" class="form-control" id="formGroupExampleInput5"
+                          placeholder="Texto explicativo da galeria"></textarea>
+            </div>
+            <img src="img/exemplo_texto_galeria.png" class="img-exemplo"/>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Imagens</legend>
+
+            <div class="form-group">
+                <label for="fileuploadthumbnail">Arquivo de thumbnail</label>
+                <input type="file" id="fileuploadthumbnail">
+                <small>Tamanho: 380 x 192px</small>
+            </div>
+
+            <br><br><br>
+
+            <button class="bg-success adicionar-arquivo">Adicionar arquivos da galeria</button>
+            <small>clique para adicionar um por um</small>
+
+            <br><br>
+
+
+            <div class="input-fields-wrapper">
+
+
+            </div>
+
+
+        </fieldset>
+
+    </form>
+
+
+    <br>
+
+    <hr>
+    <button type="submit" class="btn btn-success bt-isolar">Criar galeria</button>
+    <button type="submit" class="btn btn-warning bt-isolar">Cancelar e voltar à admin</button>
+    <button type="submit" class="btn btn-danger">Sair</button>
+
+</div>
+
+
+</body>
+</html>

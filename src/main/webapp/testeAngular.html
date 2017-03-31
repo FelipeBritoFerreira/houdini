@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Houdini</title>
+
+    <script src="recursos/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="recursos/houdini.js"></script>
+    <script src="recursos/dropzone.js"></script>
+
+    <link rel="stylesheet" href="/css/houdini.css">
+    <link rel="stylesheet" href="recursos/dropzone.css">
+
+    <script>
+
+        //Busca o nome das galerias assim que faz load do HTML
+        angular.module('home',[])
+            .controller('informacoesGaleria', function($scope, $http) {
+                $http.get('http://localhost:9090/galeria/buscarPorNome?nomeGaleria=manoamano').then(function(response) {
+                    $scope.informacoes = response.data;
+                })
+            })
+            .controller('galeriaImagensNomes', function($scope, $http) {
+                $http.get('http://localhost:9090/galeria/listarNomes').then(function (response) {
+                    $scope.listaNomeGalerias = response.data;
+                })
+            })
+            .controller('informacoesGaleriaClick', ['$scope', '$http', function ($scope, $http) {
+                $scope.buscarInformacoes = function () {
+                    var nomeGaleria = $('#nomeGaleria').val();
+                    $http.get('http://localhost:9090/galeria/buscarPorNome?nomeGaleria='+nomeGaleria).then(function (response) {
+                        $scope.informacoes = response.data;
+                        $('#nomeGaleria').val('');
+                    })
+                }
+
+            }])
+
+       ;
+
+
+
+        $('#myDropzone').on("complete", function(file) {
+            $('#myDropzone').removeFile(file);
+        });
+
+
+    </script>
+
+
+</head>
+
+
+
+
+
+<body ng-app="home" >
+
+
+<form action="/file-upload" class="dropzone" id="myDropzone">
+</form>
+
+
+
+
+
+
+
+<div ng-controller="galeriaImagensNomes">
+    <h3 ng-repeat="x in listaNomeGalerias">{{x}}</h3>
+</div>
+
+<br><br><br>
+
+<div ng-controller="informacoesGaleriaClick" >
+
+    <input type="text" id="nomeGaleria" size="20"/>
+
+    <button ng-click="buscarInformacoes()">Buscar</button>
+
+    <h3>Galeria: {{informacoes.tituloThumbnail}}</h3>
+    <h4>{{informacoes.subtituloModal}}</h4>
+
+    <div ng-repeat="img in informacoes.imagens">
+        <img ng-src="{{img.url}}" /> <br>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>

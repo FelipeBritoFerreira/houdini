@@ -1,0 +1,100 @@
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.titulo-modal {
+    font-size: 18pt;
+    color: black;
+
+}
+
+
+
+.texto-modal {
+    color: black;
+    font-size: 10pt;
+}
+
+
+.texto-modal p {
+
+    font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    text-justify: auto;
+
+
+}
+
+
+.titulo-thumbnail {
+
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1em;
+
+}
+
+figcaption {
+    border: 5px solid black;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
+}
+
+.posicao-uma-linha {
+    position: absolute;
+    top: 41%;
+    left: 15%;
+    right: 15%;
+}
+
+.posicao-duas-linha {
+    position: absolute;
+    top: 36%;
+    left: 15%;
+    right: 15%;
+}
+
+.posicao-centralizado {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+
+.img-exemplo {
+    margin-bottom: 5%;
+}
+
+.bt-isolar {
+    margin-right: 5%;
+}
+
+.adicionar-arquivo, .remover-arquivo {
+    cursor: pointer;
+}
+
+.remover-arquivo {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
